@@ -1,30 +1,39 @@
 let newtask = document.querySelector('#new-task');
-let add_task = document.querySelector('#addTask');
+let add_task = document.querySelector('form');
 let todo_items = document.querySelector('#items');
 
 let todo = [];
 
+//checking storage is it empty or not. 
 if(localStorage.length){
-    todo = JSON.parse(localStorage.getItem('todo'));
+    let todo1 = JSON.parse(localStorage.getItem('todo'));
+    for(let i=0;i<todo1.length;i++){
+        if(todo1[i].text != ""){
+            //todo.splice(i, 1);
+            todo.push(todo1[i]);
+        }
+    }
+    localStorage.setItem('todo',JSON.stringify(todo));
 }
 
+//adding new list to localstorage
 let addtask = function(event) {
     let item = {
         checkbox: false,
         text: newtask.value,
     };
-
     todo.push(item);
     localStorage.setItem('todo',JSON.stringify(todo));
     newtask.value = "";
-
     add();
-    location.reload(); 
 }
 
+//adding new list
 function add() {
     todo_items.innerHTML = "";
+
     for(let i=0;i<todo.length;i++){
+
         let listItem = document.createElement('li');
         let checkBox = document.createElement('input');
         let label = document.createElement('label');
@@ -45,18 +54,22 @@ function add() {
     }
 }
 
+
+//IIFE to show exitst todo from list
 (function(){
     add();
 })();
 
-add_task.addEventListener('click', addtask);
+//grab the submit event to add new todo
+add_task.addEventListener('submit', addtask);
 
-for(let i=0;i<todo_items.children.length;i++){
-    //console.log(i);
-    todo_items.children[i].addEventListener('click',function(event){
+//delete or update list
+function del_item(child, i){
+    child.addEventListener('click',function(event){
         if(event.target.className === 'delete'){
-            todo_items.children[i].remove();
-            todo.splice(i, 1);
+            child.remove();
+            //todo.splice(i, 1);
+            todo[i].text = "";
         }
         else{
             if(todo[i].checkbox === true){
@@ -67,6 +80,10 @@ for(let i=0;i<todo_items.children.length;i++){
             }
         }
         localStorage.setItem('todo',JSON.stringify(todo));
-        location.reload(); 
     });
+}
+
+//traverse on list to update or delete
+for(let i=0;i<todo_items.children.length;i++){
+    del_item(todo_items.children[i], i);
 }
