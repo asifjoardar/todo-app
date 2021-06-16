@@ -4,48 +4,68 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Todo App</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <section class="container">
-      <h1 id="header" class="header">To-Do</h1>
+      <h1>ToDo</h1>
 
       <div class="new-task-container box">
-        <h3>What Do You Want To Get Done Today?</h3>
+        <h2>What Do You Want To Get Done Today?</h2>
         <form class="input-things">
+
+          <div class="select-box">
+            <div class="selected">Priority</div>
+            <div class="options-container">
+              <div class="option">
+                <input type="radio" class="high"/>
+                <label>High</label>
+              </div>
+          
+              <div class="option">
+                <input type="radio" class="medium"/>
+                <label>Medium</label>
+              </div>
+          
+              <div class="option">
+                <input type="radio" class="low"/>
+                <label>Low </label>
+              </div>
+            </div>
+          </div>
           <input type="text" id="new-task" />
           <input type="submit" id="addTask" value="Add Task" />
         </form>
       </div>
 
-      <div class="todo-list box">
-        <h2>ToDo List</h2>
-        <ul id="items">
-          <!--
-          <li class="item">
-            <input type="checkbox" />
-            <label
-              >Task Name hi there i am asif, i am from bangladesh, i am a
-              student of cse.</label
-            >
-            <button class="delete">Delete</button>
-          </li>
-          <li class="item">
-            <input type="checkbox" />
-            <label>Task Name</label>
-            <button class="detele">Delete</button>
-          </li>
-          <li class="item">
-            <input type="checkbox" />
-            <label>Task Name</label>
-            <button class="delete">Delete</button>
-          </li>
-          -->
-        </ul>
+      <div class="display-things">
+        <div class="todo-list box">
+          <h3>ToDo list</h3>
+          <ul id="items" class="add-todo">
+            <!--
+              <li class="item">
+              <input type="checkbox" />
+              <label>Task Name</label>
+              <button class="update">Update</button>
+            </li>
+            -->
+          </ul>
+        </div>
+        <div class="complete-list box">
+          <h3>Complete List</h3>
+          <ul id="items" class="complete-todo">
+            <!--
+            <li class="item">
+              <button class="undo">Undo</button>
+              <label>Task Name</label>
+              <button class="delete">Delete</button>
+            </li>
+            -->
+          </ul>
+        </div>
       </div>
     </section>
     <script src="script.js"></script>
   </body>
 </html>
-
