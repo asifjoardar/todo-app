@@ -4,66 +4,73 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>My ToDo App</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <section class="container">
-      <h1>ToDo</h1>
+      <div class="container-one">
+        <h1>ToDo</h1>
+        <div class="new-task-container box">
+          <h2>What Do You Want To Get Done Today?</h2>
+          <form class="input-things">
+            <div class="select-box">
+              <div class="selected">Priority</div>
+              <div class="options-container">
+                <div class="option">
+                  <input type="radio" class="high" />
+                  <label>High</label>
+                </div>
 
-      <div class="new-task-container box">
-        <h2>What Do You Want To Get Done Today?</h2>
-        <form class="input-things">
+                <div class="option">
+                  <input type="radio" class="medium" />
+                  <label>Medium</label>
+                </div>
 
-          <div class="select-box">
-            <div class="selected">Priority</div>
-            <div class="options-container">
-              <div class="option">
-                <input type="radio" class="high"/>
-                <label>High</label>
-              </div>
-          
-              <div class="option">
-                <input type="radio" class="medium"/>
-                <label>Medium</label>
-              </div>
-          
-              <div class="option">
-                <input type="radio" class="low"/>
-                <label>Low </label>
+                <div class="option">
+                  <input type="radio" class="low" />
+                  <label>Low </label>
+                </div>
               </div>
             </div>
-          </div>
-          <input type="text" id="new-task" />
-          <input type="submit" id="addTask" value="Add Task" />
-        </form>
-      </div>
+            <input type="text" id="new-task" />
+            <input type="submit" id="addTask" value="Add Task" />
+          </form>
+        </div>
 
-      <div class="display-things">
-        <div class="todo-list box">
-          <h3>ToDo list</h3>
-          <ul id="items" class="add-todo">
-            <!--
+        <div class="display-things">
+          <div class="todo-list box">
+            <h3>ToDo list</h3>
+            <ul id="items" class="add-todo">
+              <!--
+              <li class="item High">
+                <div class="id">12345</div>
+                <div class="list-content">
+                  <input type="checkbox" />
+                  <label>Task Name</label>
+                  <button class="update">Update</button>
+                </div>
+              </li>
+              -->
+            </ul>
+          </div>
+          <div class="complete-list box">
+            <h3>Complete List</h3>
+            <ul id="items" class="complete-todo">
+              <!--
               <li class="item">
-              <input type="checkbox" />
-              <label>Task Name</label>
-              <button class="update">Update</button>
-            </li>
-            -->
-          </ul>
+                <button class="undo">Undo</button>
+                <label>Task Name</label>
+                <button class="delete">Delete</button>
+              </li>
+              -->
+            </ul>
+          </div>
         </div>
-        <div class="complete-list box">
-          <h3>Complete List</h3>
-          <ul id="items" class="complete-todo">
-            <!--
-            <li class="item">
-              <button class="undo">Undo</button>
-              <label>Task Name</label>
-              <button class="delete">Delete</button>
-            </li>
-            -->
-          </ul>
-        </div>
+      </div>
+      <div class="container-two">
+        <h1>History</h1>
+        <div class="history-container box"></div>
       </div>
     </section>
     <script src="script.js"></script>
