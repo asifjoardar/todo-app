@@ -1,21 +1,39 @@
 * {
   box-sizing: border-box;
 }
-
-.container {
+body {
+  background-color: #b1c9bb;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  margin: 0px;
+  padding: 30px;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   background: #6bb189;
-  padding: 25px;
-  max-width: 760px;
-  margin: 25px auto;
+  padding: 0px;
+  margin: 0px;
+  width: 90%;
   overflow: hidden;
   border-radius: 10px;
   border: 4px solid #b1c9bb;
   font-family: sans-serif;
+}
+
+.container-one {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+}
+.container-two {
+  padding: 10px;
+  width: 25%;
 }
 
 h1,
@@ -41,6 +59,10 @@ h3 {
   color: #57635c;
   border-bottom: 1px solid #b1c9bb;
 }
+.container-two h1 {
+  font-size: 20px;
+  padding-bottom: 4px;
+}
 
 .box {
   padding: 10px 15px;
@@ -55,7 +77,7 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  width: 100%;
 }
 
 .input-things {
@@ -72,12 +94,12 @@ h3 {
   height: 0%;
 }
 
-#addTask{
+#addTask {
   height: 0%;
 }
 
 .display-things {
-  width: 93%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -85,17 +107,19 @@ h3 {
 }
 
 .todo-list {
-  width: 45%;
+  margin: 0px;
+  width: 50%;
 }
 
 .complete-list {
-  width: 45%;
+  margin: 0px;
+  width: 50%;
 }
 
 ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 7px;
 }
 
 li {
@@ -104,6 +128,21 @@ li {
 }
 
 .item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /*justify-content: space-between;*/
+}
+.id {
+  width: 20%;
+  text-align: center;
+  border: 2px solid #050505;
+  border-radius: 5px;
+  margin-right: 2px;
+}
+.list-content {
+  width: 80%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -127,13 +166,13 @@ li {
   margin-right: 0px;
 }
 
-.High{
+.High {
   background-color: rgb(252, 90, 90);
 }
-.Medium{
+.Medium {
   background-color: rgb(252, 118, 118);
 }
-.Low{
+.Low {
   background-color: rgb(255, 167, 167);
 }
 
@@ -146,20 +185,21 @@ li {
   flex-direction: column;
 }
 
-.select-box .options-container.active{
+.select-box .options-container.active {
   max-height: 100px;
   opacity: 1;
 }
 
-.select-box .option, .selected{
+.select-box .option,
+.selected {
   text-align: center;
   padding: 3px;
   cursor: pointer;
 }
-.select-box label{
+.select-box label {
   cursor: pointer;
 }
-.select-box .option input[type = "radio"] {
+.select-box .option input[type="radio"] {
   display: none;
 }
 .select-box .option:hover {
@@ -174,17 +214,29 @@ li {
   overflow: hidden;
   border-radius: 5px;
 }
-.select-box .selected{
+.select-box .selected {
   background-color: #ccc;
   margin-bottom: 5px;
   border-radius: 5px;
 }
-.selected{
+.selected {
   font-size: 13px;
 }
 /*.............*/
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 873px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .container-one {
+    width: 100%;
+  }
+  .container-two {
+    width: 100%;
+  }
   #new-task {
     margin-bottom: 10px;
   }
@@ -193,7 +245,7 @@ li {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    width: 100%;
   }
   .input-things {
     display: flex;
@@ -204,17 +256,17 @@ li {
     padding: 5px;
   }
   .display-things {
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
   .todo-list {
-    width: 80%;
+    width: 100%;
   }
 
   .complete-list {
-    width: 80%;
+    width: 100%;
   }
 }
