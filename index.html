@@ -12,30 +12,32 @@
       <div class="container-one">
         <h1>ToDo</h1>
         <div class="new-task-container box">
-          <h2>What Do You Want To Get Done Today?</h2>
-          <form class="input-things">
-            <div class="select-box">
-              <div class="selected">Priority</div>
-              <div class="options-container">
-                <div class="option">
-                  <input type="radio" class="high" />
-                  <label>High</label>
-                </div>
-
-                <div class="option">
-                  <input type="radio" class="medium" />
-                  <label>Medium</label>
-                </div>
-
-                <div class="option">
-                  <input type="radio" class="low" />
-                  <label>Low </label>
-                </div>
-              </div>
-            </div>
-            <input type="text" id="new-task" />
-            <input type="submit" id="addTask" value="Add Task" />
-          </form>
+          <div class="task-container">
+            <h2>What Do You Want To Get Done Today?</h2>
+            <form class="input-tasks">
+              <select name="" id="priority-select">
+                <option value="" selected>Priority</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+              <input type="text" id="new-task" />
+              <input type="submit" id="addTask" value="Add Task" />
+            </form>
+          </div>
+          <div class="update-container" hidden>
+            <h2 class="update-title">Update Your task for ID: 123</h2>
+            <form class="input-updates">
+              <select name="" id="update-priority">
+                <option value="" selected>Priority</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+              </select>
+              <input type="text" id="update-task" />
+              <input type="submit" id="updateTask" value="Update" />
+            </form>
+          </div>
         </div>
 
         <div class="display-things">
@@ -69,8 +71,11 @@
         </div>
       </div>
       <div class="container-two">
-        <h1>History</h1>
-        <div class="history-container box"></div>
+        <div class="history-container box">
+          <h1>History</h1>
+          <ul id="history-items">
+          </ul>
+        </div>
       </div>
     </section>
     <script src="script.js"></script>
