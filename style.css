@@ -32,7 +32,15 @@ body {
   width: 75%;
 }
 .container-two {
-  padding: 10px;
+  text-align: center;
+  padding: 0px;
+  margin-top: 23px;
+  padding-top: 20px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 25%;
 }
 
@@ -62,6 +70,7 @@ h3 {
 .container-two h1 {
   font-size: 20px;
   padding-bottom: 4px;
+  border-bottom: 1px solid black;
 }
 
 .box {
@@ -80,7 +89,8 @@ h3 {
   width: 100%;
 }
 
-.input-things {
+.input-tasks, .input-updates{
+  /*height: 0%;*/
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -89,12 +99,12 @@ h3 {
   padding: 5px;
 }
 
-#new-task {
-  margin-right: 2px;
+#new-task, #update-task{
+  margin-right: 5px;
   height: 0%;
 }
 
-#addTask {
+#addTask, #updateTask {
   height: 0%;
 }
 
@@ -109,11 +119,13 @@ h3 {
 .todo-list {
   margin: 0px;
   width: 50%;
+  height: auto;
 }
 
 .complete-list {
   margin: 0px;
   width: 50%;
+  height: auto;
 }
 
 ul {
@@ -132,14 +144,16 @@ li {
   display: flex;
   flex-direction: row;
   align-items: center;
-  /*justify-content: space-between;*/
+  justify-content: center;
 }
 .id {
+  font-size: 10px;
   width: 20%;
   text-align: center;
   border: 2px solid #050505;
   border-radius: 5px;
-  margin-right: 2px;
+  margin-right: 3px;
+  padding: 3px;
 }
 .list-content {
   width: 80%;
@@ -176,53 +190,16 @@ li {
   background-color: rgb(255, 167, 167);
 }
 
-/*..drpdown purpose..*/
-.select-box {
-  margin-right: 3px;
+.history-container{
   text-align: center;
-  display: flex;
-  width: 70px;
-  flex-direction: column;
+  height: 193px;
+  overflow: scroll;
+  width: 100%;
 }
 
-.select-box .options-container.active {
-  max-height: 100px;
-  opacity: 1;
+#priority-select, #update-priority{
+  margin-right: 5px;
 }
-
-.select-box .option,
-.selected {
-  text-align: center;
-  padding: 3px;
-  cursor: pointer;
-}
-.select-box label {
-  cursor: pointer;
-}
-.select-box .option input[type="radio"] {
-  display: none;
-}
-.select-box .option:hover {
-  background: #414b57;
-  color: #fff;
-}
-.select-box .options-container {
-  max-height: 0px;
-  opacity: 0;
-  background-color: #ccc;
-  transition: all 0.4s;
-  overflow: hidden;
-  border-radius: 5px;
-}
-.select-box .selected {
-  background-color: #ccc;
-  margin-bottom: 5px;
-  border-radius: 5px;
-}
-.selected {
-  font-size: 13px;
-}
-/*.............*/
 
 @media only screen and (max-width: 873px) {
   .container {
@@ -235,6 +212,16 @@ li {
     width: 100%;
   }
   .container-two {
+    text-align: center;
+    margin: 0px;
+    padding: 0px 10px 10px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .history-container{
     width: 100%;
   }
   #new-task {
@@ -247,7 +234,10 @@ li {
     align-items: center;
     width: 100%;
   }
-  .input-things {
+  #priority-select{
+    margin-bottom: 7px;
+  }
+  .input-tasks, .input-updates {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -268,5 +258,11 @@ li {
 
   .complete-list {
     width: 100%;
+  }
+  .item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
